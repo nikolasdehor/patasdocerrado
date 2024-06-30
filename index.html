@@ -5,53 +5,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patas do Cerrado</title>
+    <link rel="icon" href="imagens/paw.svg" type="image/svg+xml">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f8f9fa;
-            scroll-behavior: smooth;
             margin: 0;
             padding: 0;
+            scroll-behavior: smooth;
         }
 
         .navbar {
-            background: #fff;
-            border-bottom: 1px solid #eee;
+            background: rgba(0, 0, 0, 0.7);
+            border-bottom: 1px solid #000000;
             padding: 10px 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
             width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
         }
 
-        .navbar-brand {
-            font-weight: bold;
+        .navbar-brand img {
+            height: 40px;
+        }
+
+        .navbar-brand i {
             font-size: 1.75rem;
-            color: #333;
+            margin-right: 10px;
+            color: #ff7f00; /* Laranja */
         }
 
         .navbar-nav .nav-link {
-            color: #555;
+            color: #ffffff;
             margin-right: 20px;
             font-size: 1rem;
             transition: color 0.3s ease;
         }
 
         .navbar-nav .nav-link:hover {
-            color: #007bff;
+            color: #ff7f00;
         }
 
         .navbar-nav .btn-primary {
             padding: 8px 20px;
             border-radius: 20px;
             font-size: 1rem;
-            background-color: #007bff;
+            background-color: #ff7f00;
             border: none;
             transition: background-color 0.3s ease;
         }
 
         .navbar-nav .btn-primary:hover {
-            background-color: #0056b3;
+            background-color: #cc6600;
         }
 
         .hero {
@@ -60,9 +68,8 @@
             background-position: center;
             color: white;
             text-align: center;
-            padding: 150px 0;
+            padding: 200px 0;
             position: relative;
-            margin-top: -10px;
         }
 
         .hero h1 {
@@ -79,18 +86,18 @@
             padding: 10px 30px;
             font-size: 1.2rem;
             border-radius: 25px;
-            background-color: rgba(0, 123, 255, 0.8);
+            background-color: rgba(255, 127, 0, 0.8);
             border: none;
         }
 
         .hero .btn-primary:hover {
-            background-color: rgba(0, 123, 255, 1);
+            background-color: rgba(255, 127, 0, 1);
         }
 
         .highlight-icons i {
             font-size: 2.5rem;
             margin-bottom: 15px;
-            color: #28a745;
+            color: #ff7f00; /* Laranja */
             transition: transform 0.3s ease;
         }
 
@@ -111,6 +118,8 @@
             border-radius: 15px;
             overflow: hidden;
             transition: transform 0.3s ease;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .pet-card:hover {
@@ -132,10 +141,22 @@
             margin-bottom: 10px;
         }
 
+        .btn-primary {
+            background-color: #ff7f00; /* Laranja */
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #cc6600;
+        }
+
         .success-stories .card {
             margin-bottom: 20px;
             border-radius: 15px;
             transition: transform 0.3s ease;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .success-stories .card:hover {
@@ -148,7 +169,7 @@
         }
 
         .footer a {
-            color: #ffc107;
+            color: #ff7f00; /* Laranja */
         }
 
         .footer a:hover {
@@ -160,6 +181,7 @@
             background-color: #ffffff;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             border-radius: 15px;
+            margin-top: 100px;
         }
 
         .about-us h2 {
@@ -189,13 +211,19 @@
             font-weight: 900;
             position: absolute;
             left: 0;
-            color: #28a745;
+            color: #ff7f00; /* Laranja */
         }
 
         .contact-form .btn-primary {
             border-radius: 25px;
             padding: 10px 30px;
             font-size: 1.2rem;
+            background-color: #ff7f00;
+            border: none;
+        }
+
+        .contact-form .btn-primary:hover {
+            background-color: #cc6600;
         }
     </style>
 </head>
@@ -203,14 +231,14 @@
 <body>
     <!-- Header -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="#">Patas do Cerrado</a>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="#"><i class="fas fa-paw"></i> Patas do Cerrado</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ml-auto align-items-center">
                     <li class="nav-item">
                         <a class="nav-link" href="#">Home</a>
                     </li>
@@ -227,7 +255,7 @@
                         <a class="nav-link" href="#contact">Contato</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-primary" href="#">Login/Registrar</a>
+                        <a class="btn btn-primary" href="login.html">Login/Registrar</a>
                     </li>
                 </ul>
             </div>
@@ -318,7 +346,7 @@
                     <div class="card pet-card mb-4">
                         <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="Pet 3">
                         <div class="card-body">
-                            <h5 class="card-title">Bobby</h5>
+                            <h5 class="card-title">Bobby</hhe>
                             <p class="card-text">3 anos, macho, ativo e leal.</p>
                             <a href="#" class="btn btn-primary">Mais Informações</a>
                         </div>
@@ -347,7 +375,7 @@
                     <div class="card">
                         <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="Story 2">
                         <div class="card-body">
-                            <h5 class="card-title">Bella encontrou seu lar</h5>
+                            <h5 class="card-title">Bella encontrou seu lar</hhe>
                             <p class="card-text">Bella agora tem um lar cheio de amor e carinho, graças à Patas do Cerrado.</p>
                         </div>
                     </div>
@@ -403,6 +431,34 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        // Script para atualizar o favicon de acordo com o tema do sistema
+        const setFavicon = (theme) => {
+            const favicon = document.querySelector('link[rel="icon"]');
+            if (theme === 'dark') {
+                favicon.href = 'imagens/paw-white.svg';
+            } else {
+                favicon.href = 'imagens/paw.svg';
+            }
+        };
+
+        const matchMediaDark = window.matchMedia('(prefers-color-scheme: dark)');
+        matchMediaDark.addEventListener('change', (e) => setFavicon(e.matches ? 'dark' : 'light'));
+        setFavicon(matchMediaDark.matches ? 'dark' : 'light');
+
+        // Script para scroll suave
+        document.querySelectorAll('.navbar-nav a, .hero a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.hash !== "") {
+                    e.preventDefault();
+                    const hash = this.hash;
+                    document.querySelector(hash).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
