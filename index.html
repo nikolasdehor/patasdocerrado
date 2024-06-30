@@ -79,7 +79,6 @@
             position: relative;
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
         }
 
@@ -87,12 +86,16 @@
             font-size: 3.5rem;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            max-width: 400px;
+            margin-left: auto;
         }
 
         .hero p {
             font-size: 1.5rem;
             margin-bottom: 40px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            max-width: 400px;
+            margin-left: auto;
         }
 
         .hero .btn-primary {
@@ -101,6 +104,8 @@
             border-radius: 25px;
             background-color: rgba(255, 127, 0, 0.8);
             border: none;
+            max-width: 400px;
+            margin-left: auto;
         }
 
         .hero .btn-primary:hover {
@@ -121,10 +126,12 @@
         .highlight-icons h3 {
             margin-top: 10px;
             font-weight: bold;
+            text-align: center;
         }
 
         .highlight-icons p {
             color: #6c757d;
+            text-align: center;
         }
 
         .pet-card {
@@ -194,7 +201,6 @@
             background-color: #ffffff;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             border-radius: 15px;
-            margin-top: 100px;
         }
 
         .about-us h2 {
@@ -243,13 +249,13 @@
             position: absolute;
             bottom: 50px;
             left: 50%;
-            text-align: center;
             transform: translateX(-50%);
             width: 80%;
             background: rgba(0, 0, 0, 0.7);
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
 
         .highlights .row {
@@ -287,6 +293,18 @@
 
             .highlight-icons p {
                 font-size: 0.9rem;
+            }
+
+            .hero h1,
+            .hero p,
+            .hero .btn-primary {
+                max-width: 100%;
+                margin-left: 0;
+                text-align: center;
+            }
+
+            .highlights .row {
+                flex-direction: column;
             }
         }
 
