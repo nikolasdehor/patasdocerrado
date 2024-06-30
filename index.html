@@ -74,12 +74,32 @@
             background-size: cover;
             background-position: center;
             color: white;
-            text-align: left;
-            padding: 100px 0;
+            padding: 150px 20px;
             position: relative;
             min-height: 100vh;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: flex-end;
+            overflow: hidden;
+        }
+
+        .hero h1,
+        .hero p,
+        .hero .btn-primary {
+            animation: slideInRight 1s forwards;
+            opacity: 0;
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
         }
 
         .hero h1 {
@@ -87,7 +107,6 @@
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
             max-width: 400px;
-            margin-left: auto;
         }
 
         .hero p {
@@ -95,7 +114,6 @@
             margin-bottom: 40px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
             max-width: 400px;
-            margin-left: auto;
         }
 
         .hero .btn-primary {
@@ -105,11 +123,18 @@
             background-color: rgba(255, 127, 0, 0.8);
             border: none;
             max-width: 400px;
-            margin-left: auto;
         }
 
         .hero .btn-primary:hover {
             background-color: rgba(255, 127, 0, 1);
+        }
+
+        .highlight-icons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
         }
 
         .highlight-icons i {
@@ -126,12 +151,10 @@
         .highlight-icons h3 {
             margin-top: 10px;
             font-weight: bold;
-            text-align: center;
         }
 
         .highlight-icons p {
             color: #6c757d;
-            text-align: center;
         }
 
         .pet-card {
@@ -186,6 +209,8 @@
         .footer {
             background-color: #343a40;
             color: white;
+            position: relative;
+            width: 100%;
         }
 
         .footer a {
@@ -248,23 +273,44 @@
         .highlights {
             position: absolute;
             bottom: 50px;
-            left: 50%;
+            left: 10%;
             transform: translateX(-50%);
             width: 80%;
             background: rgba(0, 0, 0, 0.7);
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
+            display: flex;
+            justify-content: space-around;
+            animation: slideUp 1s forwards;
+            opacity: 0;
         }
 
-        .highlights .row {
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .highlights .highlight-icons {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             justify-content: center;
+            text-align: center;
         }
 
         .highlights h3,
         .highlights p {
             color: white;
+            text-align: center;
         }
 
         @media (max-width: 768px) {
@@ -285,6 +331,7 @@
                 bottom: -30px;
                 width: 90%;
                 padding: 15px;
+                flex-direction: column;
             }
 
             .highlight-icons h3 {
@@ -303,13 +350,13 @@
                 text-align: center;
             }
 
-            .highlights .row {
+            .highlights .highlight-icons {
                 flex-direction: column;
             }
         }
 
         .hero-text {
-            text-align: right;
+            text-align: -webkit-right;
         }
     </style>
 </head>
