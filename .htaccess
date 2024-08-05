@@ -1,0 +1,11 @@
+RewriteEngine On
+
+#Este arquivo define regras que serão aplicadas no acesso das páginas do Projeto
+
+#Estabelece que quando for colocado um endereço válido de arquivo (f) ou diretório (d), ele deverá ser acessado
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#Caso não seja colocado um diretório ou arquivo válido, será direcionado para o Index
+RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]
+#Juntamente estará sendo criado uma váriavel que armazenará o endereço inválido colocado
