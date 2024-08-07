@@ -1,7 +1,10 @@
 <?php
 
     class Controller{
-        public function view($nome){
+        public function view($nome, $data = []){
+            if(!empty($data)){
+                extract($data);
+            }
             $arquivo = "View/".$nome.".view.php";
             if(file_exists($arquivo)){
                 require $arquivo;

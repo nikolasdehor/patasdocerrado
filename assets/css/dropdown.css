@@ -1,0 +1,12 @@
+
+.dropdown img{
+    height: 3rem;
+}
+
+.dropdown-item {
+    color: rgba(255, 127, 0, 0.8);
+}
+
+.dropdown-menu {
+    right: 0;
+  }

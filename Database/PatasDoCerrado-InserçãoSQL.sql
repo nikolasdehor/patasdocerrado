@@ -301,3 +301,21 @@ USE PatasDoCerrado;
 	INSERT INTO tipoSociabilidade(nome) VALUES
     ("Cachorros"), ("Gatos"), ("Desconhecidos"), ("Crianças");
 	SELECT * FROM tipoSociabilidade;
+    
+-- USUÁRIO
+	INSERT INTO usuario(nome, email, telefone, cpf, senha, cidade_ID, tipoUsuario_ID) VALUES
+    ("Antonio", "antonioGO@gmail.com", "61 8538-2598", "12332112332", "123",10, 2);
+    SELECT * FROM Usuario;
+    
+-- ANIMAIS
+	INSERT INTO animal(nome, usuario_ID, cidade_ID, porte_ID, idade_ID, especie_ID, genero_ID, statusAdocao_ID) VALUES
+    ("Bartô", 1, 199, 1, 1, 1, 1, 1);
+    
+    INSERT INTO animal(nome, usuario_ID, cidade_ID, porte_ID, idade_ID, especie_ID, genero_ID, statusAdocao_ID) VALUES
+    ("Theo", 1, 10, 1, 1, 1, 1, 1);
+    
+    INSERT INTO animal(nome, usuario_ID, cidade_ID, porte_ID, idade_ID, especie_ID, genero_ID, statusAdocao_ID) VALUES
+    ("Luna", 1, 10, 1, 1, 2, 2, 1);
+    
+    INSERT INTO animal(nome, usuario_ID, cidade_ID, porte_ID, idade_ID, especie_ID, genero_ID, statusAdocao_ID) VALUES
+    ("Jão", 1, 10, 1, 1, 1, 1, 2);

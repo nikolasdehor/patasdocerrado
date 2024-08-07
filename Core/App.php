@@ -6,7 +6,7 @@
 
         private function separarURL(){
             $URL = $_GET['url'] ?? 'home';
-            $URL = explode("/", $URL);
+            $URL = explode("/", trim($URL, "/"));
             return $URL;
         }
         public function carregarController(){
@@ -20,8 +20,13 @@
                 require $arquivo;
                 $this->controller = "_404";
             }
-
             $controller = new $this->controller;
-            call_user_func_array([$controller, $this->method], []);
+
+            if(!empty($URL[1])){
+                if(method_exists($controller, $URL[1])){
+                    $this->method = $URL[1];
+                }
+            }
+            call_user_func_array([$controller, $this->method], $URL);
         }
     }

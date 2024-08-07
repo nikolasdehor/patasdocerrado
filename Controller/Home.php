@@ -1,8 +1,12 @@
 <?php
 
-    Class Home extends Controller{
+    class Home extends Controller{
         public function index(){
-            echo "Controller do Home";
-            $this->view('home');
+            if(empty($_SESSION)){
+                $data['usuario'] = 'Usuário';
+            }else{
+                $data['usuario'] = $_SESSION['USUARIO'];
+            }
+            $this->view('home', $data);
         }
     }
