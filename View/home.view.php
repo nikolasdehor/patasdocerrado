@@ -502,6 +502,11 @@
                             </div>
                         </div>
                     </div>
+                    <div class="position-relative">
+                        <div class="position-absolute top-50 start-50 translate-middle">    
+                            <a href="FinaisFelizes" class="btn btn-primary">Ver mais</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
