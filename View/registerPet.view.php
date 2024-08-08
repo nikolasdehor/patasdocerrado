@@ -5,8 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrar - Patas do Cerrado</title>
+    <link href="assets/css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script src="assets/javascript/bootstrap/js/bootstrap.bundle.min.js"></script>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -23,14 +26,16 @@
             background-attachment: fixed;
             color: white;
         }
-
+        
         .register-container {
             background: rgba(0, 0, 0, 0.7);
             padding: 40px;
-            height: 1000px;
+            min-width: 50rem;
             max-width:60rem;
             border-radius: 25px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+            margin-bottom: 2rem;
         }
 
         .register-container h2 {
@@ -53,6 +58,21 @@
             background-color: #ff7f00;
             border: none;
             transition: background-color 0.3s ease;
+        }
+
+        .form-group .btn-primary {
+            margin-right: 0.5rem;
+            border-radius: 10px;
+            font-size: 1rem;
+            background-color: #C3C3C3;
+            border-style: solid;
+            border-color: #7F7F7F;
+            color: #000000;
+            transition: background-color 0.3s ease;
+        }
+        .form-group .btn-primary:checked {
+            background-color: #ff7f00;
+            color: white;
         }
 
         .register-container .btn-primary:hover {
@@ -79,107 +99,139 @@
         .address-container {
             display: none;
         }
+
+        hr{
+            height: 1px;
+            background: black;
+        }
     </style>
 </head>
 
 <body>
-    <div class="container min-vh-100 d-flex justify-content-center align-items-center">
-       
+    <div class="container min-vh-150 d-flex justify-content-center align-items-center">
         <div class="register-container">
-        <a href="home" class="home-icon"><i class="fas fa-home"></i></a>
-        <h2 class="text-center">Registrar</h2>
-        <form id="registerForm" onsubmit="return validateForm()" method="post" enctype="multipart/form-data">
-            <div class="row user-info">
-                <div class="col">
-                    <div class="form-group">
-                        <label for="nome">Nome</label>
-                        <input type="text" class="form-control" id="nome" name="nome" placeholder="Seu Nome" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="senha">Senha</label>
-                        <input type="password" class="form-control" id="senha" name="senha" placeholder="Sua Senha" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="cpf">CPF</label>
-                        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Seu CPF" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="cidade">Selecione sua cidade</label><br>
-                        <select class="form-select rounded" id="cidade_ID" name="cidade_ID" form="registerForm">
-                            <?php 
-                                foreach ($data as $cidade){
-                            ?>
-                                <option value="<?php echo $cidade->ID;
-                                ?>">
-                                    <?php echo $cidade->nome;
+            <a href="home" class="home-icon"><i class="fas fa-home"></i></a>
+            <h2 class="text-center">Registrar</h2>
+            <div class="container d-flex justify-content-center align-items-center">
+                <form class="w-75" id="registerForm" onsubmit="return validateForm()" method="post" enctype="multipart/form-data">
+                    <div class="row row-cols-2">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="nome">Nome do Pet*</label>
+                                <input type="text" class="form-control" id="nome" name="nome" placeholder="Nome do seu pet" required>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="especie">Espécie</label>
+                                <input type="text" class="form-control" id="especie" name="especie" placeholder="Selecione a espécie" required>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="especie">Gênero</label>
+                                <input type="text" class="form-control" id="especie" name="especie" placeholder="Selecione a espécie" required>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="especie">Idade</label>
+                                <input type="text" class="form-control" id="especie" name="especie" placeholder="Selecione a espécie" required>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="especie">Porte</label>
+                                <input type="text" class="form-control" id="especie" name="especie" placeholder="Selecione a espécie" required>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="cidade">Selecione sua cidade</label><br>
+                                <select class="form-select rounded" id="cidade_ID" name="cidade_ID" form="registerForm">
+                                    <?php 
+                                        foreach ($data as $cidade){
                                     ?>
-                                </option>
-                            <?php 
-                                }
-                            ?>
-                        </select>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-group">
-                        <label for="nome">Nome</label>
-                        <input type="text" class="form-control" id="nome" name="nome" placeholder="Seu Nome" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="senha">Senha</label>
-                        <input type="password" class="form-control" id="senha" name="senha" placeholder="Sua Senha" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="cpf">CPF</label>
-                        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Seu CPF" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="cidade">Selecione sua cidade</label><br>
-                        <select class="form-select rounded" id="cidade_ID" name="cidade_ID" form="registerForm">
-                            <?php 
-                                foreach ($data as $cidade){
-                            ?>
-                                <option value="<?php echo $cidade->ID;
-                                ?>">
-                                    <?php echo $cidade->nome;
+                                        <option value="<?php echo $cidade->ID;
+                                        ?>">
+                                            <?php echo $cidade->nome;
+                                            ?>
+                                        </option>
+                                    <?php 
+                                        }
                                     ?>
-                                </option>
-                            <?php 
-                                }
-                            ?>
-                        </select>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="descricao" class="form-label">Descrição</label>
+                                <textarea class="form-control" id="descricao" rows="4"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                        </div>
+                        <div class="col-8">
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1" class="form-label">Foto Principal</label>
+                                <input type="file" class="form-control" id="especie" name="especie" required>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <hr>
+                            <div class="form-group">
+                                <label for="cuidados-veterinarios" class="form-label">Cuidados Veterinários</label>
+                                <div class="row row-cols-4">
+                                    <input type="checkbox" class="btn-check" id="btn-castrado" autocomplete="off">
+                                    <label class="btn btn-primary" for="btn-castrado">Castrado</label>
+                                    <input type="checkbox" class="btn-check" id="btn-vacinado" autocomplete="off">
+                                    <label class="btn btn-primary" for="btn-vacinado">Vacinado</label>
+                                    <input type="checkbox" class="btn-check" id="btn-vermifugado" autocomplete="off">
+                                    <label class="btn btn-primary" for="btn-vermifugado">Vermifugado</label>
+                                </div>
+                                <div class="row row-cols-2">
+                                    <input type="checkbox" class="btn-check" id="btn-vermifugado" autocomplete="off">
+                                    <label class="btn btn-primary" for="btn-cuidados-especiais">Cuidados Especiais</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="cuidados-veterinarios" class="form-label">Temperamento</label>
+                                <div class="row row-cols-4">
+                                    <input type="checkbox" class="btn-check" id="btn-docil" autocomplete="off">
+                                    <label class="btn btn-primary" for="btn-docil">Dócil</label>
+                                    <input type="checkbox" class="btn-check" id="btn-agressivo" autocomplete="off">
+                                    <label class="btn btn-primary" for="btn-agressivo">Agressivo</label>
+                                    <input type="checkbox" class="btn-check" id="btn-vermifugado" autocomplete="off">
+                                    <label class="btn btn-primary" for="btn-vermifugado">Vermifugado</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="cuidados-veterinarios" class="form-label">Cuidados Veterinários</label>
+                                <div class="row row-cols-4">
+                                    <input type="checkbox" class="btn-check" id="btn-castrado" autocomplete="off">
+                                    <label class="btn btn-primary" for="btn-castrado">Castrado</label>
+                                    <input type="checkbox" class="btn-check" id="btn-vacinado" autocomplete="off">
+                                    <label class="btn btn-primary" for="btn-vacinado">Vacinado</label>
+                                    <input type="checkbox" class="btn-check" id="btn-vermifugado" autocomplete="off">
+                                    <label class="btn btn-primary" for="btn-vermifugado">Vermifugado</label>
+                                </div>
+                                <div class="row row-cols-2">
+                                    <input type="checkbox" class="btn-check" id="btn-vermifugado" autocomplete="off">
+                                    <label class="btn btn-primary" for="btn-cuidados-especiais">Cuidados Especiais</label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Seu Email" required>
+                    <div class="row">
+                        <div class="col-4"></div>
+                        <div class="col-4">
+                            <button class="btn btn-primary btn-block" type="submit">Registrar</button>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="confirmar-senha">Confirmar Senha</label>
-                        <input type="password" class="form-control" id="confirmar-senha" name="confirmar-senha" placeholder="Confirme sua Senha" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="telefone">Telefone</label>
-                        <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Seu Telefone" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="imagem">Insira uma Imagem de perfil:</label>
-                        <input type="file" id="imagem" name="imagem" accept="image/*">
-                    </div>
-                </div>
+                </form>
             </div>
-            <div class="row">
-                <div class="col-4"></div>
-                <div class="col-4">
-                    <button class="btn btn-primary btn-block" type="submit">Registrar</button>
-                </div>
-            </div>
-            <small class="form-text text-center">Já tem uma conta? <a href="login">Login</a></small>
-        </form>
         </div>
     </div>
-    
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
