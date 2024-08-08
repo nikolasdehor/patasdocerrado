@@ -22,6 +22,7 @@
 
         .content {
             flex: 1;
+            padding-top: 100px; /* Para evitar sobreposição da navbar */
         }
 
         .navbar {
@@ -69,72 +70,92 @@
             background-color: #cc6600;
         }
 
-        .hero {
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 100px 20px;
-            position: relative;
-            min-height: 50vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 40px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-        }
-
-        .hero .btn-primary {
-            padding: 10px 30px;
-            font-size: 1.2rem;
-            border-radius: 25px;
-            background-color: rgba(255, 127, 0, 0.8);
-            border: none;
-        }
-
-        .hero .btn-primary:hover {
-            background-color: rgba(255, 127, 0, 1);
-        }
-
         .pet-details {
-            padding: 60px 20px;
+            padding: 20px;
             background-color: #ffffff;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 15px;
+            border-radius: 5px;
             margin-top: 20px;
         }
 
-        .pet-details h2 {
-            margin-bottom: 30px;
-            font-weight: bold;
-        }
-
-        .pet-details .pet-info {
+        .pet-info {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
         }
 
-        .pet-details .pet-info img {
+        .main-image-container {
+            max-width: 50%;
+            text-align: center;
+        }
+
+        .main-image {   /* Ajusta a base das fotos */
             width: 100%;
-            max-width: 400px;
-            border-radius: 15px;
+            height: 330px;
+            max-width: 360px;
+            border-radius: 50px;
+            margin-bottom: 3px;
+        }
+
+        .thumbnail-images {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .thumbnail-images img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            margin: 0 5px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .thumbnail-images img:hover {
+            transform: scale(1.1);
+        }
+
+        .pet-details-text {
+            max-width: 50%;
+            padding-left: 20px;
+        }
+
+        .pet-details-text h3 {
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .pet-details-text p {
             margin-bottom: 20px;
         }
 
-        .pet-details .pet-info h3 {
-            margin-bottom: 15px;
-            font-weight: bold;
+        .tags {
+            margin-bottom: 20px;
+        }
+
+        .tags span {
+            display: inline-block;
+            background-color: #ff7f00;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            margin: 0 5px;
+        }
+
+        .btn-adopt {
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border-radius: 20px;
+            background-color: #ff7f00;
+            border: none;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-adopt:hover {
+            background-color: #cc6600;
         }
 
         .footer {
@@ -163,22 +184,31 @@
         }
     ?>
 
-    <!-- Hero Section -->
-    <section class="hero" id="heroSection">
-        <div class="container">
-            <h1 id="petName">Nome do Pet</h1>
-            <p id="petDescription">Descrição do Pet</p>
-        </div>
-    </section>
-
     <div class="content">
         <!-- Pet Details -->
         <section class="pet-details">
             <div class="container">
                 <div class="pet-info">
-                    <img id="petImage" src="https://via.placeholder.com/400x300" alt="Imagem do Pet">
-                    <h3 id="petNameDetail">Nome do Pet</h3>
-                    <p id="petDetails">Detalhes sobre o pet...</p>
+                    <div class="main-image-container">
+                        <img id="petImage" class="main-image" src="https://via.placeholder.com/600x400" alt="Imagem do Pet">
+                        <div class="thumbnail-images">
+                            <img src="https://via.placeholder.com/100x75" alt="Imagem do Pet 1">
+                            <img src="https://via.placeholder.com/100x75" alt="Imagem do Pet 2">
+                            <img src="https://via.placeholder.com/100x75" alt="Imagem do Pet 3">
+                            <img src="https://via.placeholder.com/100x75" alt="Imagem do Pet 4">
+                        </div>
+                    </div>
+                    <div class="pet-details-text">
+                        <h3 id="petNameDetail">Nome do Pet</h3>
+                        <p id="petLocation">Localidade do Pet</p>
+                        <p id="petDetails">Detalhes sobre o pet...</p>
+                        <div class="tags">
+                            <span>Grande</span>
+                            <span>Docil</span>
+                            <span>Macho</span>
+                        </div>
+                        <button class="btn-adopt">Quero Adotar</button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -204,38 +234,31 @@
         const pets = {
             rex: {
                 name: 'Rex',
+                location: 'Cidade X',
                 description: '2 anos, macho, brincalhão e amigável.',
-                image: 'https://via.placeholder.com/400x300',
-                details: 'Rex é um cachorro muito amigável e cheio de energia. Ele adora brincar e está procurando um lar amoroso.'
-            },
-            luna: {
-                name: 'Luna',
-                description: '1 ano, fêmea, amorosa e carinhosa.',
-                image: 'https://via.placeholder.com/400x300',
-                details: 'Luna é uma cadelinha doce e carinhosa. Ela adora receber carinho e se dá bem com outros animais.'
-            },
-            bobby: {
-                name: 'Bobby',
-                description: '3 anos, macho, ativo e leal.',
-                image: 'https://via.placeholder.com/400x300',
-                details: 'Bobby é um cão leal e cheio de energia. Ele está à procura de uma família ativa que possa acompanhá-lo em suas aventuras.'
+                image: 'https://via.placeholder.com/600x400',
+                thumbnails: [
+                    'https://via.placeholder.com/100x75',
+                    'https://via.placeholder.com/100x75',
+                    'https://via.placeholder.com/100x75',
+                    'https://via.placeholder.com/100x75'
+                ]
             }
         };
 
-        const pet = pets[petName.toLowerCase()];
+        if (pets[petName]) {
+            document.getElementById('petNameDetail').textContent = pets[petName].name;
+            document.getElementById('petLocation').textContent = pets[petName].location;
+            document.getElementById('petDetails').textContent = pets[petName].description;
+            document.getElementById('petImage').src = pets[petName].image;
 
-        if (pet) {
-            document.getElementById('petName').textContent = pet.name;
-            document.getElementById('petDescription').textContent = pet.description;
-            document.getElementById('petImage').src = pet.image;
-            document.getElementById('petNameDetail').textContent = pet.name;
-            document.getElementById('petDetails').textContent = pet.details;
+            const thumbnails = document.querySelectorAll('.thumbnail-images img');
+            thumbnails.forEach((img, index) => {
+                img.src = pets[petName].thumbnails[index];
+            });
         } else {
-            document.getElementById('petName').textContent = 'Pet não encontrado';
-            document.getElementById('petDescription').textContent = 'Detalhes não disponíveis';
-            document.getElementById('petImage').style.display = 'none';
             document.getElementById('petNameDetail').textContent = 'Pet não encontrado';
-            document.getElementById('petDetails').textContent = 'Detalhes não disponíveis';
+            document.getElementById('petDetails').textContent = '';
         }
     </script>
 </body>
