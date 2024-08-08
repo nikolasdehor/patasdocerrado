@@ -23,6 +23,6 @@
                         return $result;
                     }
                 }
-            return [];
+                return [];
         }
     }

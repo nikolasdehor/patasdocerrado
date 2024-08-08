@@ -3,7 +3,7 @@
     class RegisterAnimal extends Controller{
         public function index(){
             $form = new Formulario();
-            $cuidados = [];
+            $cuidado = [];
             $temperamento = [];
             $convivio = [];
             $sociabilidade = [];
@@ -89,18 +89,15 @@
                     $sociabilidade[] = $_POST['btn-criancas'];
                     unset($_POST['btn-criancas']);
                 }
+                show($_POST);
                 $_POST['usuario_ID'] = $_SESSION['USUARIO'][0]->ID;
+                show($_POST);
+                $_POST['statusAdocao_ID'] = 1;
                 $animal = new Animal();
                 $ID = $animal->insert($_POST);
                 $animal->inserirInformacoes($ID, $cuidado, $temperamento, $convivio, $sociabilidade);
+                header("Location:index.php");
             }
-            show($form->listarTabela('animal'));
-            show($cuidados);
-            show($temperamento);
-            show($convivio);
-            show($sociabilidade);
-            show($_POST);
-
             $this->view('registeranimal', $data);
         }
     }

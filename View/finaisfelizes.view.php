@@ -27,13 +27,26 @@
                     flex-direction: column;
                     justify-content: space-between; 
                 }
+                .btn-primary{
+                    background-color: #ff7f00;
+                    border: none;
+                    transition: background-color 0.3s ease;
+                }
+                .btn-primary:hover {
+                    background-color: #cc6600;
+                }
+
+                h2{
+                    border-bottom: solid;
+                    border-color: #ff7f00;
+                }
             </style>
 
         </head>
         <body>
             <div class="container pt-4 pb-5 bg-light">
-                <h2 class="border-bottom border-2 border-primary">
-                    Animais 
+                <h2>
+                    Finais Felizes
                 </h2>
                 <div class="container-fluid p-3">
                     <div class="row">

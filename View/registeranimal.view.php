@@ -69,10 +69,6 @@
             color: #000000;
             transition: background-color 0.3s ease;
         }
-        .form-group .btn-primary:checked {
-            background-color: #ff7f00;
-            color: white;
-        }
 
         .register-container .btn-primary:hover {
             background-color: #ff7f00;
@@ -83,9 +79,7 @@
         }
 
         .home-icon {
-            position: absolute;
             top: 10px;
-            left: 10px;
             color: white;
             font-size: 1.5rem;
             transition: color 0.3s ease;

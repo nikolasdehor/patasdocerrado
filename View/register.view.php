@@ -79,6 +79,14 @@
         .address-container {
             display: none;
         }
+        .btn-primary{
+                    background-color: #ff7f00;
+                    border: none;
+                    transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #cc6600;
+        }
     </style>
 </head>
 

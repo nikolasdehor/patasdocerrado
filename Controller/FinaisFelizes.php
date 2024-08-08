@@ -33,6 +33,6 @@
             }
             $where = implode(" AND ", $where);
             $data['animais'] = $animais->select($join, $where, $order, null, $fields);
-            $this->view('animaisadotar', $data);
+            $this->view('finaisfelizes', $data);
         }
     }

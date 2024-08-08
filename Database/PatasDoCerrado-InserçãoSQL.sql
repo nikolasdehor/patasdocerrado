@@ -309,4 +309,4 @@ USE PatasDoCerrado;
     
 -- ANIMAIS
 	INSERT INTO animal(nome, usuario_ID, cidade_ID, porte_ID, idade_ID, especie_ID, genero_ID, statusAdocao_ID) VALUES
-		("Bartô", 1, 199, 1, 1, 1, 1, 1);
+		("Bartô", 1, 199, 2, 2, 1, 1, 1);
