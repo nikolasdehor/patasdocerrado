@@ -184,7 +184,6 @@
             include ("View/header/nav.php");
         }
     ?>
-
     <div class="content">
         <!-- Pet Details -->
         <section class="pet-details">

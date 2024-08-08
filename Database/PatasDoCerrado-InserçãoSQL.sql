@@ -304,12 +304,12 @@ USE PatasDoCerrado;
     
 -- USUÁRIO
 	INSERT INTO usuario(nome, email, telefone, cpf, senha, cidade_ID, tipoUsuario_ID) VALUES
-    ("Antonio", "antonioGO@gmail.com", "62 1212-1212", "12332112332", "123",195, 2),
-    ("João Pedro", "joao@gmail.com", "62 1234-5678", "12332112332", "123",62, 2),
-    ("Nikolas", "nikolas@gmail.com", "62 4321-8765", "12332112332", "123",195, 2),
-    ("Gabriela", "gabriela@gmail.com", "62 1234-4321", "12332112332", "123",195, 2),
-    ("Ramiro", "ramiro@gmail.com", "62 4321-1234", "12332112332", "123",195, 2);
-    SELECT * FROM Usuario;
+		("Antonio", "antonioGO@gmail.com", "62 1212-1212", "12332112332", "123",195, 2),
+		("João Pedro", "joao@gmail.com", "62 1234-5678", "12332112332", "123",62, 2),
+		("Nikolas", "nikolas@gmail.com", "62 4321-8765", "12332112332", "123",195, 2),
+		("Gabriela", "gabriela@gmail.com", "62 1234-4321", "12332112332", "123",195, 2),
+		("Ramiro", "ramiro@gmail.com", "62 4321-1234", "12332112332", "123",195, 2);
+	SELECT * FROM usuario;
     
 -- ANIMAIS
 	INSERT INTO animal(nome, usuario_ID, cidade_ID, porte_ID, idade_ID, especie_ID, genero_ID, statusAdocao_ID) VALUES
@@ -320,4 +320,6 @@ USE PatasDoCerrado;
         ("Minty", 4, 195, 2, 2, 2, 2, 1),
         ("Ludy", 4, 195, 2, 2, 2, 2, 2),
         ("Jão", 5, 195, 3, 2, 1, 1, 1),
-        ("Rabito", 195, 50, 3, 2, 1, 1, 1);
+        ("Rabito", 5, 195, 3, 2, 1, 1, 1),
+        ("Rocambole", 5, 195, 3, 2, 1, 1, 2);
+	SELECT * FROM animal;
