@@ -419,7 +419,7 @@
     <section class="hero">
     <div class="container hero-text">
         <!-- Logo -->
-        <img src="Fotos, Icones e pngs/Logo/Logopng.png" alt="Logo" class="logo">
+        <img src="assets/imagens/Logo/Logopng.png" alt="Logo" class="logo">
 
         <h1>Encontre seu novo melhor amigo!</h1>
        
@@ -429,27 +429,27 @@
             <a href="AnimaisAdotar" class="btn btn-lg btn-primary">Ver Pets para Adoção</a>
 
             <a href="FinaisFelizes" class="btn btn-lg btn-primary">Finais Felizes</a>
-            
+            <br><br><br><br><br><br><br><br>
         </div>
         <div class="highlights">
-    <div class="row">
-        <div class="col-md-4 highlight-icons">
-            <i class="fas fa-heart"></i>
-            <h3>Adote</h3>
-            <p>Adote com amor!</p>
+            <div class="row">
+                <div class="col-md-4 highlight-icons">
+                    <i class="fas fa-heart"></i>
+                    <h3>Adote</h3>
+                    <p>Adote com amor!</p>
+                </div>
+                <div class="col-md-4 highlight-icons">
+                    <i class="fas fa-paw"></i>
+                    <h3>Adoção</h3> 
+                    <p>Ajude um pet a encontrar um novo lar!</p> 
+                </div>
+                <div class="col-md-4 highlight-icons">
+                    <i class="fas fa-home"></i>
+                    <h3>Parcerias</h3>
+                    <p>Fazemos parcerias com prefeituras e ONGs</p>
+                </div>
+            </div>
         </div>
-        <div class="col-md-4 highlight-icons">
-            <i class="fas fa-paw"></i>
-            <h3>Adoção</h3> 
-            <p>Ajude um pet a encontrar um novo lar!</p> 
-        </div>
-        <div class="col-md-4 highlight-icons">
-            <i class="fas fa-home"></i>
-            <h3>Parcerias</h3>
-            <p>Fazemos parcerias com prefeituras e ONGs</p>
-        </div>
-    </div>
-</div>
         
            
 </section>

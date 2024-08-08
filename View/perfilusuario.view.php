@@ -377,6 +377,10 @@
         .card-title{
             color: #ff7f00;
         }
+
+        .modal-title{
+            color: #ff7f00;
+        }
     </style>
 </head>
 <body>
@@ -394,7 +398,7 @@
                 <div class="card mb-3" style="max-width: 540px;">
                     <div class="row g-0">
                         <div class="col-md-4">
-                        <img src="..." class="img-fluid rounded-start" alt="...">
+                        <img src="assets/imagens/UserPlaceholder.jpg" class="img-fluid rounded" alt="Foto de Perfil Usuário">
                         </div>
                     <div class="col-md-8">
                         <div class="card-body">
@@ -417,13 +421,84 @@
                                     echo $usuario[0]->descricao;
                                 ?>
                             </p>
-                            <p class="card-text"></p>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalContatos">
+                                Meus contatos
+                            </button>
+                            <div class="modal fade" id="modalContatos" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Quer saber mais sobre meus pets?</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Entre em contato com este usuário para saber mais!
+                                        <br>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#ff7f00" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                                            <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                                        </svg>
+                                        <strong>
+                                        <?php
+                                            echo $usuario[0]->telefone;
+                                        ?>
+                                        </strong>
+                                        <br>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#ff7f00" class="bi bi-envelope" viewBox="0 0 16 16">
+                                            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                                        </svg>
+                                        <strong>
+                                        <?php
+                                            echo $usuario[0]->email;
+                                        ?>
+                                        </strong>
+                                        <br>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <em>*Adote com responsabilidade! Um gesto de amor pode mudar duas vidas para sempre.*</em>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 </div>
             </div>
         </div>
+        <div class="row">
+            <?php
+                if(!empty($animais)){
+                    foreach($animais as $x){
+            ?>
+            <div class="col-sm-12 col-md-6 col-lg-3">
+                <div class="card" style="width: 100%">
+                    <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="Pet 1">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <?php
+                                echo $x->animalNome;
+                            ?>
+                        </h5>
+                        <p class="card-text">
+                            <?php
+                                echo $x->cidadeNome;
+                            ?>
+                        </p>
+                        <a href="adopt?pet=rex" class="btn btn-primary">Mais Informações</a>
+                    </div>
+                </div>
+            </div>
+                            
+            <?php
+                            
+                }
+            }else{
+                    ?>
+                        <h4>Este usuário não inseriu nenhum animal</h4>
+                    <?php
+                }
+            ?>
+                </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

@@ -11,6 +11,12 @@
                 $fields = "cidade.nome AS 'cidadeNome'";
                 $where = "usuario.ID = ".$data['usuario'][0]->ID;
                 $data['usuario'][0]->cidade = $usuario->select($join,$where, null, null, $fields)[0]->cidadeNome;
+
+                $join = "animal ON ".$data['usuario'][0]->ID." = animal.usuario_ID INNER JOIN cidade ON animal.cidade_ID = cidade.ID";
+                $order = "animal.ID DESC";
+                $fields = "usuario.ID, animal.ID, animal.nome AS 'animalNome', cidade.nome AS 'cidadeNome'";
+                $where = "statusAdocao_ID = 1";
+                $data['animais'] = $usuario->select($join, $where, $order, null, $fields);
             }
             $this->view('perfilusuario', $data);
         }
