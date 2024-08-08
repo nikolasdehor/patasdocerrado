@@ -11,6 +11,12 @@
             <link href="assets/css/dropdown.css" rel="stylesheet">
 
             <style>
+                body{
+                    background-image: url("assets/imagens/Fundo/fundofinaisfelizes.png");
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+
                 .card {
                     display: flex;
                     flex-direction: column;
@@ -40,10 +46,68 @@
                     border-bottom: solid;
                     border-color: #ff7f00;
                 }
+                .navbar {
+                    background: rgba(0, 0, 0, 0.7);
+                    border-bottom: 1px solid #000000;
+                    padding: 10px 20px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+                    width: 100%;
+                    position: fixed;
+                    top: 0;
+                    z-index: 1000;
+                }
+
+                .navbar-brand img {
+                    height: 40px;
+                }
+
+                .navbar-brand i {
+                    font-size: 1.75rem;
+                    margin-right: 10px;
+                    color: #ff7f00;
+                }
+
+                .navbar-nav .nav-link {
+                    color: #ffffff;
+                    margin-right: 20px;
+                    font-size: 1rem;
+                    transition: color 0.3s ease;
+                }
+
+                .navbar-nav .nav-link:hover {
+                    color: #ff7f00;
+                }
+
+                .navbar-nav .btn-primary {
+                    padding: 8px 20px;
+                    border-radius: 20px;
+                    font-size: 1rem;
+                    background-color: #ff7f00;
+                    border: none;
+                    transition: background-color 0.3s ease;
+                }
+
+                .navbar-nav .btn-primary:hover {
+                    background-color: #cc6600;
+                }
+
+                .navbar .nav-img {
+                    padding-right: 5rem;
+                }
             </style>
 
         </head>
         <body>
+            <?php
+                if(!empty($_SESSION['USUARIO'])){
+                    include ("View/header/navLogado.php");
+                }else{
+                    include ("View/header/nav.php");
+                }
+            ?>
+            <div>
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            </div>
             <div class="container pt-4 pb-5 bg-light">
                 <h2>
                     Finais Felizes
