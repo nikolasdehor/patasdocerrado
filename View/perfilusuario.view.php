@@ -363,6 +363,20 @@
         .hero-text {
             text-align: -webkit-right;
         }
+
+        .user-info{
+            background-color: #E3E3E3;
+        }
+        
+        .card{
+            border:none;
+            background-color: #E3E3E3;
+            min-height: 10rem;
+        }
+
+        .card-title{
+            color: #ff7f00;
+        }
     </style>
 </head>
 <body>
@@ -373,10 +387,44 @@
             include ("View/header/nav.php");
         }
     ?>
-    <br><br><br>
-    <h1>
-        Perfil Usuario
-    </h1>
+    <br><br><br><br>
+    <div class="container-fluid">
+        <div class="container user-info rounded">
+            <div = row>
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                        <img src="..." class="img-fluid rounded-start" alt="...">
+                        </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h3 class="card-title">
+                                <?php
+                                    echo $usuario[0]->nome;
+                                ?>
+                            </h3>
+                            <h6 class="card-subtitle">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#ff7f00" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                                </svg>
+                                Goiás, 
+                                <?php
+                                    echo $usuario[0]->cidade;
+                                ?>
+                            </h6>
+                            <p class="card-text">
+                                <?php
+                                    echo $usuario[0]->descricao;
+                                ?>
+                            </p>
+                            <p class="card-text"></p>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>

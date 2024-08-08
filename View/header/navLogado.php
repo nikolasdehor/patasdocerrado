@@ -34,7 +34,7 @@
                             </span>
                             </li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Meu Perfil</a></li>
+                            <li><a class="dropdown-item" href="perfilusuario">Meu Perfil</a></li>
                             <li><a class="dropdown-item" href="registeranimal">Cadastrar um Animal</a></li>
                             <li><a class="dropdown-item" href="#">Altera Senha</a></li>
                             <li><hr class="dropdown-divider"></li>
