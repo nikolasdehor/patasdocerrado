@@ -419,7 +419,7 @@
     <section class="hero">
     <div class="container hero-text">
         <!-- Logo -->
-        <img src="Fotos/Logo/Logopng.png" alt="Logo" class="logo">
+        <img src="Fotos, Icones e pngs/Logo/Logopng.png" alt="Logo" class="logo">
 
         <h1>Encontre seu novo melhor amigo!</h1>
        
