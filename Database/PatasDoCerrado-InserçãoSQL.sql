@@ -310,3 +310,6 @@ USE PatasDoCerrado;
 -- ANIMAIS
 	INSERT INTO animal(nome, usuario_ID, cidade_ID, porte_ID, idade_ID, especie_ID, genero_ID, statusAdocao_ID) VALUES
 		("Bartô", 1, 199, 2, 2, 1, 1, 1);
+	SELECT * FROM animal;
+
+	SELECT DISTINCT animal.ID, animal.nome AS 'animalNome', cidade.nome AS 'cidadeNome' FROM usuario INNER JOIN animal ON animal.usuario_ID = 2 INNER JOIN cidade ON animal.cidade_ID = cidade.ID WHERE statusAdocao_ID = 1;

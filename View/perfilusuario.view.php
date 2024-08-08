@@ -199,18 +199,6 @@
             background-color: #cc6600;
         }
 
-        .success-stories .card {
-            margin-bottom: 20px;
-            border-radius: 15px;
-            transition: transform 0.3s ease;
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .success-stories .card:hover {
-            transform: scale(1.05);
-        }
-
         .footer {
             background-color: #343a40;
             color: white;
@@ -381,6 +369,22 @@
         .modal-title{
             color: #ff7f00;
         }
+
+        h4{
+            color: #ff7f00;
+        }
+
+        .modal-dialog{
+            min-width: 800px;
+        }
+
+        input{
+            background-color: #E3E3E3;
+        }
+
+        .form-control{
+            background-color: #E3E3E3;
+        }
     </style>
 </head>
 <body>
@@ -393,79 +397,163 @@
     ?>
     <br><br><br><br>
     <div class="container-fluid">
-        <div class="container user-info rounded">
-            <div = row>
-                <div class="card mb-3" style="max-width: 540px;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                        <img src="assets/imagens/UserPlaceholder.jpg" class="img-fluid rounded" alt="Foto de Perfil Usuário">
-                        </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h3 class="card-title">
-                                <?php
-                                    echo $usuario[0]->nome;
-                                ?>
-                            </h3>
-                            <h6 class="card-subtitle">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#ff7f00" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                                    <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
-                                </svg>
-                                Goiás, 
-                                <?php
-                                    echo $usuario[0]->cidade;
-                                ?>
-                            </h6>
-                            <p class="card-text">
-                                <?php
-                                    echo $usuario[0]->descricao;
-                                ?>
-                            </p>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalContatos">
-                                Meus contatos
-                            </button>
-                            <div class="modal fade" id="modalContatos" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Quer saber mais sobre meus pets?</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        Entre em contato com este usuário para saber mais!
-                                        <br>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#ff7f00" class="bi bi-whatsapp" viewBox="0 0 16 16">
-                                            <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
-                                        </svg>
-                                        <strong>
-                                        <?php
-                                            echo $usuario[0]->telefone;
-                                        ?>
-                                        </strong>
-                                        <br>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#ff7f00" class="bi bi-envelope" viewBox="0 0 16 16">
-                                            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
-                                        </svg>
-                                        <strong>
-                                        <?php
-                                            echo $usuario[0]->email;
-                                        ?>
-                                        </strong>
-                                        <br>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <em>*Adote com responsabilidade! Um gesto de amor pode mudar duas vidas para sempre.*</em>
+        <div class="container user-info mb-3 rounded col-12">
+            <div class="row">
+                <div class="col-8">
+                    <div class="card" style="max-width: 540px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="assets/imagens/UserPlaceholder.jpg" class="img-fluid rounded" alt="Foto de Perfil Usuário">
+                            </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h3 class="card-title">
+                                    <?php
+                                        echo $usuario[0]->nome;
+                                    ?>
+                                </h3>
+                                <h6 class="card-subtitle">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#ff7f00" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+                                    </svg>
+                                    Goiás, 
+                                    <?php
+                                        echo $usuario[0]->cidade;
+                                    ?>
+                                </h6>
+                                <p class="card-text">
+                                    <?php
+                                        echo $usuario[0]->descricao;
+                                    ?>
+                                </p>
+                                <button type="button" class="btn btn-primary me-2 mb-1" data-bs-toggle="modal" data-bs-target="#modalContatos">
+                                    Meus contatos
+                                </button>
+                                <div class="modal fade" id="modalContatos" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Quer saber mais sobre meus pets?</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                Entre em contato com este usuário para saber mais!
+                                                <br>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#ff7f00" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                                                    <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                                                </svg>
+                                                <strong>
+                                                <?php
+                                                    echo $usuario[0]->telefone;
+                                                ?>
+                                                </strong>
+                                                <br>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#ff7f00" class="bi bi-envelope" viewBox="0 0 16 16">
+                                                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                                                </svg>
+                                                <strong>
+                                                <?php
+                                                    echo $usuario[0]->email;
+                                                ?>
+                                                </strong>
+                                                <br>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <em>*Adote com responsabilidade! Um gesto de amor pode mudar duas vidas para sempre.*</em>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            </div>
+
+                                <button type="button" class="btn btn-primary me-2 mb-1" data-bs-toggle="modal" data-bs-target="#modalEditarPerfil">
+                                    Editar perfil
+                                </button>
+                                <div class="modal fade" id="modalEditarPerfil" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Editar Perfil e Informações de Contato</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                            <form id="registerForm" onsubmit="return validateForm()" method="post" enctype="multipart/form-data">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <div class="form-group">
+                                                            <label for="nome">Nome</label>
+                                                            <input type="text" class="form-control" id="nome" name="nome" placeholder="Seu Nome" required>
+                                                        </div>
+                                                    <div class="form-group">
+                                                        <label for="cidade">Selecione sua cidade</label><br>
+                                                        <select class="form-select rounded" id="cidade_ID" name="cidade_ID" form="registerForm">
+                                                        <?php 
+                                                            foreach ($cidades as $cidade){
+                                                        ?>
+                                                        <option value="<?php echo $cidade->ID;
+                                                        ?>">
+                                                        <?php echo $cidade->nome;
+                                                        ?>
+                                                        </option>
+                                                        <?php 
+                                                        }
+                                                        ?>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            <div class="col-4">
+                                                <div class="form-group">
+                                                    <label for="imagem">Insira uma Imagem de perfil:</label>
+                                                    <input type="file" id="imagem" name="imagem" accept="image/*">
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                    <label for="descricao" class="form-label">Descrição</label>
+                                                    <textarea class="form-control" id="descricao" name="descricao" rows="4" form="registerForm"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="form-group">
+                                                    <label for="telefone">Telefone</label>
+                                                    <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Telefone" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-8">
+                                                <div class="form-group">
+                                                    <label for="email">Email</label>
+                                                    <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-3">
+                                            <div class="d-grid gap-2 col-6 mx-auto">
+                                                <button class="btn btn-primary btn-block" type="submit">Salvar</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                         </div>
                     </div>
                 </div>
+
+            <a class="btn btn-primary" href="registerAnimal">
+                Cadastrar um animal
+            </a>
+        </div>
+                            
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="col-4 d-flex">
                 </div>
             </div>
+            
         </div>
-        <div class="row">
+        <div class="container">
+            <h4>Animais para adoção deste usuário:</h4>
+            <hr>
+            <div class="row mt-3">
             <?php
                 if(!empty($animais)){
                     foreach($animais as $x){
@@ -499,6 +587,8 @@
                 }
             ?>
                 </div>
+            </div>
+            
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

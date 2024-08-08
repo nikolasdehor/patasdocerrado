@@ -46,7 +46,6 @@
             @$limit = strlen($limit) ? 'LIMIT '.$limit : '';
         
             $query = 'SELECT '.$fields.' FROM '.$this->table.' '.$join.' '.$where.' '.$order.' '.$limit;
-            show($query);
             return $this->query($query);
         }
 
