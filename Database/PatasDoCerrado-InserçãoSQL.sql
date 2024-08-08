@@ -304,12 +304,20 @@ USE PatasDoCerrado;
     
 -- USUÁRIO
 	INSERT INTO usuario(nome, email, telefone, cpf, senha, cidade_ID, tipoUsuario_ID) VALUES
-    ("Antonio", "antonioGO@gmail.com", "61 8538-2598", "12332112332", "123",10, 2);
+    ("Antonio", "antonioGO@gmail.com", "62 1212-1212", "12332112332", "123",195, 2),
+    ("João Pedro", "joao@gmail.com", "62 1234-5678", "12332112332", "123",62, 2),
+    ("Nikolas", "nikolas@gmail.com", "62 4321-8765", "12332112332", "123",195, 2),
+    ("Gabriela", "gabriela@gmail.com", "62 1234-4321", "12332112332", "123",195, 2),
+    ("Ramiro", "ramiro@gmail.com", "62 4321-1234", "12332112332", "123",195, 2);
     SELECT * FROM Usuario;
     
 -- ANIMAIS
 	INSERT INTO animal(nome, usuario_ID, cidade_ID, porte_ID, idade_ID, especie_ID, genero_ID, statusAdocao_ID) VALUES
-		("Bartô", 1, 199, 2, 2, 1, 1, 1);
-	SELECT * FROM animal;
-
-	SELECT DISTINCT animal.ID, animal.nome AS 'animalNome', cidade.nome AS 'cidadeNome' FROM usuario INNER JOIN animal ON animal.usuario_ID = 2 INNER JOIN cidade ON animal.cidade_ID = cidade.ID WHERE statusAdocao_ID = 1;
+		("Bartô", 1, 199, 2, 2, 1, 1, 1),
+        ("Sheila", 2, 62, 1, 2, 1, 2, 1),
+        ("Rochele", 2, 62, 1, 2, 1, 2, 2),
+        ("Bethoven", 3, 195, 3, 3, 1, 1, 1),
+        ("Minty", 4, 195, 2, 2, 2, 2, 1),
+        ("Ludy", 4, 195, 2, 2, 2, 2, 2),
+        ("Jão", 5, 195, 3, 2, 1, 1, 1),
+        ("Rabito", 195, 50, 3, 2, 1, 1, 1);

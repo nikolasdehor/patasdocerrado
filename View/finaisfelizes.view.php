@@ -248,6 +248,15 @@
                     ?>
                 </div>
             </div>
-            
+            <footer class="footer py-4 mt-auto">
+                <div class="container text-center">
+                    <p>&copy; 2024 Patas do Cerrado. Todos os direitos reservados.</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-white mr-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white mr-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </footer>
         </body>
     </html>

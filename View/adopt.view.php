@@ -172,6 +172,7 @@
         .footer a:hover {
             text-decoration: none;
         }
+        
     </style>
 </head>
 
@@ -203,9 +204,10 @@
                         <p id="petLocation">Localidade do Pet</p>
                         <p id="petDetails">Detalhes sobre o pet...</p>
                         <div class="tags">
-                            <span>Grande</span>
-                            <span>Docil</span>
-                            <span>Macho</span>
+                            <span class="mb-2">Cuidados Veterinários</span>
+                            <span class="mb-2">Temperamento</span>
+                            <span class="mb-2">Convívio</span>
+                            <span class="mb-2">Sociabilidade</span>
                         </div>
                         <button class="btn-adopt">Quero Adotar</button>
                     </div>
@@ -225,42 +227,6 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        // Script to fetch pet details from URL parameters
-        const urlParams = new URLSearchParams(window.location.search);
-        const petName = urlParams.get('pet');
-
-        const pets = {
-            rex: {
-                name: 'Rex',
-                location: 'Cidade X',
-                description: '2 anos, macho, brincalhão e amigável.',
-                image: 'https://via.placeholder.com/600x400',
-                thumbnails: [
-                    'https://via.placeholder.com/100x75',
-                    'https://via.placeholder.com/100x75',
-                    'https://via.placeholder.com/100x75',
-                    'https://via.placeholder.com/100x75'
-                ]
-            }
-        };
-
-        if (pets[petName]) {
-            document.getElementById('petNameDetail').textContent = pets[petName].name;
-            document.getElementById('petLocation').textContent = pets[petName].location;
-            document.getElementById('petDetails').textContent = pets[petName].description;
-            document.getElementById('petImage').src = pets[petName].image;
-
-            const thumbnails = document.querySelectorAll('.thumbnail-images img');
-            thumbnails.forEach((img, index) => {
-                img.src = pets[petName].thumbnails[index];
-            });
-        } else {
-            document.getElementById('petNameDetail').textContent = 'Pet não encontrado';
-            document.getElementById('petDetails').textContent = '';
-        }
-    </script>
 </body>
 
 </html>
