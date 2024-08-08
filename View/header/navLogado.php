@@ -23,10 +23,10 @@
                 </li>
                 <li class="nav-item nav-img">
                     <div class="dropdown">
-                        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
                             <img src="assets/imagens/Luis.jpg" class="rounded-circle">
                         </button>
-                        <ul class="dropdown-menu dropdown-menu-dark">
+                        <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
                             <li><span class="dropdown-item-text">
                                 <?php
                                     echo $usuario[0]->nome;
