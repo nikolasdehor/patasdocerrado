@@ -75,7 +75,7 @@
         }
 
         .hero {
-            background-image: url("assets/imagens/dog.jpg");
+            background-image: url("assets/imagens/dog02.jpg");
             background-size: cover;
             background-position: center;
             color: white;
@@ -353,16 +353,58 @@
                 max-width: 100%;
                 margin-left: 0;
                 text-align: center;
+                
             }
 
             .highlights .highlight-icons {
                 flex-direction: column;
             }
+            
         }
 
         .hero-text {
             text-align: -webkit-right;
         }
+
+
+        .logo {
+              display: block;
+                 margin: 0 0 20px 120px; 
+                 max-width: 500px;
+                 height: auto;
+                  animation: slideInRight 0.8s ease-out; 
+}
+
+        .highlights {
+            background-color: rgba(0, 0, 0, 0.7); /
+            padding: 10px; 
+            border-radius: 100px; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+            margin-top: 20px; 
+        }
+
+        .highlight-icons {
+            text-align: center;
+            padding: 5px; 
+        }
+
+        .highlight-icons i {
+            font-size: 30px; 
+        }
+
+        .highlight-icons h3 {
+            margin-top: 5px; 
+            font-size: 16px;
+            font-weight: bold; 
+            color: #fff;
+        }
+
+        .highlight-icons p {
+            font-size: 14px; 
+            color: #ddd; 
+        }
+
+
     </style>
 </head>
 <body>
@@ -375,31 +417,44 @@
     ?>
     <!-- Hero Section -->
     <section class="hero">
-        <div class="container hero-text">
-            <h1>Encontre seu novo melhor amigo!</h1>
-            <p>Nossa missão é encontrar lares amorosos para cada pet.</p>
-            <a href="#adopt" class="btn btn-lg btn-primary">Ver Pets para Adoção</a>
-            <div class="highlights">
-                <div class="row">
-                    <div class="col-md-4 highlight-icons">
-                        <i class="fas fa-heart"></i>
-                        <h3>Amor</h3>
-                        <p>Cuidamos dos pets com muito amor.</p>
-                    </div>
-                    <div class="col-md-4 highlight-icons">
-                        <i class="fas fa-paw"></i>
-                        <h3>Cuidado</h3>
-                        <p>Nossa prioridade é o bem-estar dos pets.</p>
-                    </div>
-                    <div class="col-md-4 highlight-icons">
-                        <i class="fas fa-home"></i>
-                        <h3>Resgate</h3>
-                        <p>Resgatamos e cuidamos de pets em necessidade.</p>
-                    </div>
-                </div>
-            </div>
+    <div class="container hero-text">
+        <!-- Logo -->
+        <img src="Fotos/Logo/Logopng.png" alt="Logo" class="logo">
+
+        <h1>Encontre seu novo melhor amigo!</h1>
+       
+        <!-- Botões -->
+        <div class="btn-container">
+
+            <a href="AnimaisAdotar" class="btn btn-lg btn-primary">Ver Pets para Adoção</a>
+
+            <a href="FinaisFelizes" class="btn btn-lg btn-primary">Finais Felizes</a>
+            
         </div>
-    </section>
+        <div class="highlights">
+    <div class="row">
+        <div class="col-md-4 highlight-icons">
+            <i class="fas fa-heart"></i>
+            <h3>Adote</h3>
+            <p>Adote com amor!</p>
+        </div>
+        <div class="col-md-4 highlight-icons">
+            <i class="fas fa-paw"></i>
+            <h3>Adoção</h3> 
+            <p>Ajude um pet a encontrar um novolar!</p> 
+        </div>
+        <div class="col-md-4 highlight-icons">
+            <i class="fas fa-home"></i>
+            <h3>Parcerias</h3>
+            <p>Fazemos parcerias com prefeituras e ONGs</p>
+        </div>
+    </div>
+</div>
+        
+           
+</section>
+
+
 
     <div class="content">
         <!-- About Us -->
@@ -463,6 +518,8 @@
                     <div class="position-relative">
                         <div class="position-absolute top-50 start-50 translate-middle">    
                             <a href="AnimaisAdotar" class="btn btn-primary">Ver mais</a>
+                            
+                            
                         </div>
                     </div>
                 </div>
