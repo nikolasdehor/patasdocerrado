@@ -61,12 +61,11 @@
         }
 
         .form-group .btn-primary {
-            margin-right: 0.5rem;
             border-radius: 10px;
             font-size: 1rem;
-            background-color: #C3C3C3;
+            background-color: #FFFFFF;
             border-style: solid;
-            border-color: #7F7F7F;
+            border-color: #C3C3C3;
             color: #000000;
             transition: background-color 0.3s ease;
         }
@@ -123,34 +122,82 @@
                         </div>
                         <div class="col">
                             <div class="form-group">
-                                <label for="especie">Espécie</label>
-                                <input type="text" class="form-control" id="especie" name="especie" placeholder="Selecione a espécie" required>
+                                <label for="especie_ID">Espécie</label>
+                                <select class="form-select rounded" id="especie_ID" name="especie_ID" form="registerForm">
+                                    <?php 
+                                        foreach ($especies as $especie){
+                                    ?>
+                                        <option value="<?php echo $especie->ID;
+                                        ?>">
+                                            <?php echo $especie->nome;
+                                            ?>
+                                        </option>
+                                    <?php 
+                                        }
+                                    ?>
+                                </select>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group">
-                                <label for="especie">Gênero</label>
-                                <input type="text" class="form-control" id="especie" name="especie" placeholder="Selecione a espécie" required>
+                                <label for="genero_ID">Gênero</label>
+                                <select class="form-select rounded" id="genero_ID" name="genero_ID" form="registerForm">
+                                    <?php 
+                                        foreach ($generos as $genero){
+                                    ?>
+                                        <option value="<?php echo $genero->ID;
+                                        ?>">
+                                            <?php echo $genero->nome;
+                                            ?>
+                                        </option>
+                                    <?php 
+                                        }
+                                    ?>
+                                </select>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group">
-                                <label for="especie">Idade</label>
-                                <input type="text" class="form-control" id="especie" name="especie" placeholder="Selecione a espécie" required>
+                                <label for="idade">Idade</label>
+                                <select class="form-select rounded" id="idade_ID" name="idade_ID" form="registerForm">
+                                    <?php 
+                                        foreach ($idades as $idade){
+                                    ?>
+                                        <option value="<?php echo $idade->ID;
+                                        ?>">
+                                            <?php echo $idade->nome;
+                                            ?>
+                                        </option>
+                                    <?php 
+                                        }
+                                    ?>
+                                </select>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group">
                                 <label for="especie">Porte</label>
-                                <input type="text" class="form-control" id="especie" name="especie" placeholder="Selecione a espécie" required>
+                                <select class="form-select rounded" id="porte_ID" name="porte_ID" form="registerForm">
+                                    <?php 
+                                        foreach ($portes as $porte){
+                                    ?>
+                                        <option value="<?php echo $porte->ID;
+                                        ?>">
+                                            <?php echo $porte->nome;
+                                            ?>
+                                        </option>
+                                    <?php 
+                                        }
+                                    ?>
+                                </select>
                             </div>
                         </div>
                         <div class="col">
                             <div class="form-group">
-                                <label for="cidade">Selecione sua cidade</label><br>
+                                <label for="cidade">Cidade</label><br>
                                 <select class="form-select rounded" id="cidade_ID" name="cidade_ID" form="registerForm">
                                     <?php 
-                                        foreach ($data as $cidade){
+                                        foreach ($cidades as $cidade){
                                     ?>
                                         <option value="<?php echo $cidade->ID;
                                         ?>">
@@ -166,58 +213,82 @@
                         <div class="col-12">
                             <div class="form-group">
                                 <label for="descricao" class="form-label">Descrição</label>
-                                <textarea class="form-control" id="descricao" rows="4"></textarea>
+                                <textarea class="form-control" id="descricao" name="descricao" rows="4" form="registerForm"></textarea>
                             </div>
                         </div>
                         <div class="col-4">
                         </div>
                         <div class="col-8">
                             <div class="form-group">
-                                <label for="exampleFormControlTextarea1" class="form-label">Foto Principal</label>
-                                <input type="file" class="form-control" id="especie" name="especie" required>
+                                <label for="foto" class="form-label">Foto Principal</label>
+                                <input type="file" accept="image/*" class="form-control" id="foto" name="foto">
                             </div>
                         </div>
                         <div class="col-12">
                             <hr>
                             <div class="form-group">
                                 <label for="cuidados-veterinarios" class="form-label">Cuidados Veterinários</label>
-                                <div class="row row-cols-4">
-                                    <input type="checkbox" class="btn-check" id="btn-castrado" autocomplete="off">
+                                <div class="row row-cols-4" id="cuidados-veterinarios">
+                                    <input type="checkbox" class="btn-check" id="btn-castrado" name="btn-castrado" value=1 autocomplete="off">
                                     <label class="btn btn-primary" for="btn-castrado">Castrado</label>
-                                    <input type="checkbox" class="btn-check" id="btn-vacinado" autocomplete="off">
+                                    <input type="checkbox" class="btn-check" id="btn-vacinado" name="btn-vacinado" value=2 autocomplete="off">
                                     <label class="btn btn-primary" for="btn-vacinado">Vacinado</label>
-                                    <input type="checkbox" class="btn-check" id="btn-vermifugado" autocomplete="off">
+                                    <input type="checkbox" class="btn-check" id="btn-vermifugado" name="btn-vermifugado" value=3 autocomplete="off">
                                     <label class="btn btn-primary" for="btn-vermifugado">Vermifugado</label>
                                 </div>
                                 <div class="row row-cols-2">
-                                    <input type="checkbox" class="btn-check" id="btn-vermifugado" autocomplete="off">
+                                    <input type="checkbox" class="btn-check" id="btn-cuidados-especiais" name="btn-cuidados-especiais" value=4 autocomplete="off">
                                     <label class="btn btn-primary" for="btn-cuidados-especiais">Cuidados Especiais</label>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="cuidados-veterinarios" class="form-label">Temperamento</label>
-                                <div class="row row-cols-4">
-                                    <input type="checkbox" class="btn-check" id="btn-docil" autocomplete="off">
+                                <label for="temperamento" class="form-label">Temperamento</label>
+                                <div class="row row-cols-4" id="temperamento">
+                                    <input type="checkbox" class="btn-check" id="btn-docil" name="btn-docil" value=1 autocomplete="off">
                                     <label class="btn btn-primary" for="btn-docil">Dócil</label>
-                                    <input type="checkbox" class="btn-check" id="btn-agressivo" autocomplete="off">
+
+                                    <input type="checkbox" class="btn-check" id="btn-agressivo" name="btn-agressivo" value=2 autocomplete="off">
                                     <label class="btn btn-primary" for="btn-agressivo">Agressivo</label>
-                                    <input type="checkbox" class="btn-check" id="btn-vermifugado" autocomplete="off">
-                                    <label class="btn btn-primary" for="btn-vermifugado">Vermifugado</label>
+
+                                    <input type="checkbox" class="btn-check" id="btn-calmo" name="btn-calmo" value=3 autocomplete="off">
+                                    <label class="btn btn-primary" for="btn-calmo">Calmo</label>
+
+                                    <input type="checkbox" class="btn-check" id="btn-brincalhao" name="btn-brincalhao" value=4 autocomplete="off">
+                                    <label class="btn btn-primary" for="btn-brincalhao">Brincalhão</label>
+
+                                    <input type="checkbox" class="btn-check" id="btn-sociavel" name="btn-sociavel" value=5 autocomplete="off">
+                                    <label class="btn btn-primary" for="btn-sociavel">Sociável</label>
+                                    
+                                    <input type="checkbox" class="btn-check" id="btn-arisco" name="btn-arisco" value=6 autocomplete="off">
+                                    <label class="btn btn-primary" for="btn-arisco">Arisco</label>
+
+                                    <input type="checkbox" class="btn-check" id="btn-independente" name="btn-independente" value=7 autocomplete="off">
+                                    <label class="btn btn-primary" for="btn-independente">Independente</label>
+
+                                    <input type="checkbox" class="btn-check" id="btn-carente" name="btn-carente" value=8 autocomplete="off">
+                                    <label class="btn btn-primary" for="btn-carente">Carente</label>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="cuidados-veterinarios" class="form-label">Cuidados Veterinários</label>
-                                <div class="row row-cols-4">
-                                    <input type="checkbox" class="btn-check" id="btn-castrado" autocomplete="off">
-                                    <label class="btn btn-primary" for="btn-castrado">Castrado</label>
-                                    <input type="checkbox" class="btn-check" id="btn-vacinado" autocomplete="off">
-                                    <label class="btn btn-primary" for="btn-vacinado">Vacinado</label>
-                                    <input type="checkbox" class="btn-check" id="btn-vermifugado" autocomplete="off">
-                                    <label class="btn btn-primary" for="btn-vermifugado">Vermifugado</label>
+                                <label for="convivio" class="form-label">Convívio</label>
+                                <div class="row row-cols-4" id="convivio">
+                                    <input type="checkbox" class="btn-check" id="btn-casa-com-quintal" name="btn-casa-com-quintal" value=1 autocomplete="off">
+                                    <label class="btn btn-primary col-4" for="btn-casa-com-quintal">Casa com quintal</label>
+                                    <input type="checkbox" class="btn-check" id="btn-apartamento" name="btn-apartamento" value=2 autocomplete="off">
+                                    <label class="btn btn-primary" for="btn-apartamento">Apartamento</label>
                                 </div>
-                                <div class="row row-cols-2">
-                                    <input type="checkbox" class="btn-check" id="btn-vermifugado" autocomplete="off">
-                                    <label class="btn btn-primary" for="btn-cuidados-especiais">Cuidados Especiais</label>
+                            </div>
+                            <div class="form-group">
+                                <label for="sociabilidade" class="form-label">Sociabilidade</label>
+                                <div class="row row-cols-4" id="sociabilidade">
+                                    <input type="checkbox" class="btn-check" id="btn-cachorros" name="" value=1 autocomplete="off">
+                                    <label class="btn btn-primary" for="btn-cachorros">Cachorros</label>
+                                    <input type="checkbox" class="btn-check" id="btn-gatos" name="btn-gatos" value=2 autocomplete="off">
+                                    <label class="btn btn-primary" for="btn-gatos">Gatos</label>
+                                    <input type="checkbox" class="btn-check" id="btn-desconhecidos" name="btn-desconhecidos" value=3 autocomplete="off">
+                                    <label class="btn btn-primary" for="btn-desconhecidos">Desconhecidos</label>
+                                    <input type="checkbox" class="btn-check" id="btn-criancas" name="btn-criancas" value=4 autocomplete="off">
+                                    <label class="btn btn-primary" for="btn-criancas">Crianças</label>
                                 </div>
                             </div>
                         </div>

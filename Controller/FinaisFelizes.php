@@ -15,7 +15,6 @@
             $where['animal.statusAdocao_ID'] = "statusAdocao_ID = 2";
 
             if($_SERVER['REQUEST_METHOD']=='POST'){
-                show($_POST);
                 if($_POST['especie_ID'] != 0){
                     $where['animal.especie_ID'] = "animal.especie_ID =".$_POST['especie_ID'];
                 }
