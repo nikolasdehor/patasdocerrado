@@ -441,7 +441,7 @@
         <div class="col-md-4 highlight-icons">
             <i class="fas fa-paw"></i>
             <h3>Adoção</h3> 
-            <p>Ajude um pet a encontrar um novolar!</p> 
+            <p>Ajude um pet a encontrar um novo lar!</p> 
         </div>
         <div class="col-md-4 highlight-icons">
             <i class="fas fa-home"></i>
